@@ -255,7 +255,7 @@ input, select, textarea {
 }
 
 .header__logo img {
-  height: 44px;
+  height: 88px;
   width: auto;
   object-fit: contain;
 }
@@ -2094,39 +2094,48 @@ a.canal:hover { background: rgba(0,0,0,0.25); }
   color: var(--green);
 }
 
-/* ── 3. MAPA DO BRASIL — VERSÃO ILUSTRADA ───────────────── */
+/* ── 3. MAPA DO BRASIL — 3D ISOMÉTRICO (branco/verde) ───── */
 .brasil-map-wrap {
   position: relative;
   width: 100%;
   max-width: 520px;
   margin: 0 auto;
+  padding: 30px 24px 70px;
+  overflow: visible;
 }
 
 .brasil-mapa-full {
   width: 100%;
   height: auto;
   display: block;
-  filter: drop-shadow(0 4px 24px rgba(0,0,0,0.5));
+  /* Perspectiva 3D isométrica: inclina o mapa como a referência */
+  transform: perspective(900px) rotateX(36deg) rotateZ(-20deg);
+  transform-origin: 50% 56%;
+  /* Sombra dura lateral (simula extrude) + sombra difusa no chão */
+  filter:
+    drop-shadow(7px 13px 0px rgba(170,170,170,0.70))
+    drop-shadow(3px 6px 0px rgba(170,170,170,0.40))
+    drop-shadow(0 45px 35px rgba(0,0,0,0.11));
 }
 
-/* Estados inativos */
+/* Estados inativos — cinza claro */
 .br-estado {
-  fill: #1a2f20;
-  stroke: #2d5038;
+  fill: #ebebeb;
+  stroke: #c5c5c5;
   stroke-width: 1.2;
-  transition: fill 0.3s ease;
+  transition: fill 0.25s ease;
 }
 
 .br-estado:hover {
-  fill: #22422b;
+  fill: #d5d5d5;
 }
 
-/* Estados ativos (PI, MA, CE, TO, BA, DF) */
+/* Estados ativos (PI, MA, CE, TO, BA, DF) — verde da marca */
 .br-estado--ativo {
   fill: var(--green);
-  stroke: #8fe8a0;
+  stroke: #16852f;
   stroke-width: 1.5;
-  opacity: 0.88;
+  opacity: 1;
   animation: mapaFade 1.2s ease forwards;
 }
 
@@ -2139,7 +2148,7 @@ a.canal:hover { background: rgba(0,0,0,0.25); }
 
 @keyframes mapaFade {
   from { opacity: 0; transform: scale(0.97); }
-  to   { opacity: 0.88; transform: scale(1); }
+  to   { opacity: 1;  transform: scale(1);   }
 }
 
 /* Labels dos estados */
@@ -2147,7 +2156,7 @@ a.canal:hover { background: rgba(0,0,0,0.25); }
   font-family: 'Montserrat', sans-serif;
   font-size: 7.5px;
   font-weight: 600;
-  fill: rgba(255,255,255,0.35);
+  fill: rgba(60,60,60,0.45);
   text-anchor: middle;
   pointer-events: none;
 }
@@ -2164,7 +2173,7 @@ a.canal:hover { background: rgba(0,0,0,0.25); }
 
 /* Linhas de conexão */
 .br-conexoes line {
-  stroke: rgba(31,159,59,0.4);
+  stroke: rgba(31,159,59,0.45);
   stroke-width: 1.5;
   stroke-dasharray: 4 3;
 }
@@ -2193,7 +2202,7 @@ a.canal:hover { background: rgba(0,0,0,0.25); }
   display: flex;
   gap: 24px;
   justify-content: center;
-  margin-top: 16px;
+  margin-top: 24px;
   flex-wrap: wrap;
 }
 
@@ -2209,8 +2218,8 @@ a.canal:hover { background: rgba(0,0,0,0.25); }
   width: 12px;
   height: 12px;
   border-radius: 3px;
-  background: #1a2f20;
-  border: 1px solid #2d5038;
+  background: #dedede;
+  border: 1px solid #c5c5c5;
   flex-shrink: 0;
 }
 
@@ -2227,8 +2236,8 @@ a.canal:hover { background: rgba(0,0,0,0.25); }
 .header__logo img:hover { transform: scale(1.03); }
 
 @media (max-width: 767px) {
-  .brasil-map-wrap { max-width: 100%; }
-  .brasil-mapa-full { max-height: 360px; width: auto; margin: 0 auto; }
+  .brasil-map-wrap { max-width: 100%; padding: 20px 12px 55px; }
+  .brasil-mapa-full { max-height: 300px; width: auto; margin: 0 auto; }
   .resultado__grid { grid-template-columns: 1fr 1fr; }
   .resultado__destaque { flex-direction: column; text-align: center; }
   .simulador__form-logo img { max-width: 130px; }
