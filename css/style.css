@@ -255,7 +255,7 @@ input, select, textarea {
 }
 
 .header__logo img {
-  height: 88px;
+  height: 44px;
   width: auto;
   object-fit: contain;
 }
@@ -1773,451 +1773,44 @@ a.canal:hover { background: rgba(0,0,0,0.25); }
   .atuamos__cta p { text-align: left; }
 }
 
-/* Print styles */
-@media print {
-  .header, .whatsapp-float, .cookie-banner { display: none; }
-}
-
-/* ─────────────────────────────────────────────────────────────
-   NOVOS ESTILOS — REDESIGN COMPLETO
-   1. Soluções com foto-cards
-   2. Simulador melhorado
-   3. Mapa do Brasil ilustrado
-───────────────────────────────────────────────────────────── */
-
-/* ── 1. SOLUÇÕES — FOTO CARDS ────────────────────────────── */
-.solucoes__photo-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-
-.sol-card {
-  position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  height: 420px;
-  box-shadow: var(--shadow-lg);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-.sol-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-}
-
-.sol-card__inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.6s ease;
-}
-
-.sol-card:hover .sol-card__inner {
-  transform: scale(1.05);
-}
-
-.sol-card__overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.92) 0%,
-    rgba(0, 0, 0, 0.55) 45%,
-    rgba(0, 0, 0, 0.20) 100%
-  );
-  transition: background 0.35s ease;
-}
-
-.sol-card:hover .sol-card__overlay {
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.95) 0%,
-    rgba(0, 0, 0, 0.65) 50%,
-    rgba(0, 0, 0, 0.25) 100%
-  );
-}
-
-.sol-card__badge {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: var(--green);
-  color: #fff;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  padding: 5px 14px;
-  border-radius: 100px;
-  z-index: 2;
-  text-transform: uppercase;
-}
-
-.sol-card__content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 28px 28px 32px;
-  z-index: 2;
-  transform: translateY(6px);
-  transition: transform 0.35s ease;
-}
-
-.sol-card:hover .sol-card__content {
-  transform: translateY(0);
-}
-
-.sol-card__icon {
-  width: 44px;
-  height: 44px;
-  background: var(--green);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 14px;
-  color: #fff;
-}
-
-.sol-card__icon svg {
-  width: 22px;
-  height: 22px;
-  stroke: #fff;
-}
-
-.sol-card__title {
-  font-size: 1.45rem;
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: 0.04em;
-  margin-bottom: 10px;
-}
-
-.sol-card__desc {
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.78);
-  line-height: 1.55;
-  margin-bottom: 18px;
-}
-
-.sol-card__cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--green);
-  font-weight: 700;
-  font-size: 0.9rem;
-  transition: gap 0.25s ease, color 0.2s;
-}
-
-.sol-card__cta:hover { gap: 14px; color: #4fcc6b; }
-
-.sol-card__cta svg {
-  width: 16px;
-  height: 16px;
-  stroke: currentColor;
-  flex-shrink: 0;
-}
-
-@media (max-width: 767px) {
-  .solucoes__photo-grid {
-    grid-template-columns: 1fr;
-  }
-  .sol-card { height: 340px; }
-}
-
-/* ── 2. SIMULADOR — LOGO + FORMULÁRIO MELHORADO ─────────── */
-.simulador__form-logo {
-  text-align: center;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid rgba(255,255,255,0.15);
-}
-
-.simulador__form-logo img {
-  display: inline-block;
-  max-width: 160px;
-  height: auto;
-}
-
-.simulador__form-subtitle {
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.55);
-  text-align: center;
-  margin-top: -12px;
-  margin-bottom: 20px;
-}
-
-/* Resultado melhorado */
-.resultado__header {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.resultado__subtitle {
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.55);
-  margin-top: 4px;
-}
-
-.resultado__destaque {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  background: rgba(31,159,59,0.18);
-  border: 1px solid rgba(31,159,59,0.4);
-  border-radius: var(--radius);
-  padding: 20px 24px;
-  margin-bottom: 20px;
-}
-
-.resultado__destaque-icon {
-  width: 48px;
-  height: 48px;
-  background: var(--green);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  color: #fff;
-}
-
-.resultado__destaque-icon svg {
-  width: 24px;
-  height: 24px;
-  stroke: #fff;
-}
-
-.resultado__destaque-label {
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.6);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 4px;
-}
-
-.resultado__destaque-valor {
-  font-size: 1.9rem;
-  font-weight: 800;
-  color: #fff;
-  line-height: 1;
-}
-
-.resultado__destaque-sub {
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.55);
-  margin-top: 4px;
-}
-
-.resultado__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-bottom: 18px;
-}
-
-.resultado__item {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: var(--radius-sm);
-  padding: 14px 16px;
+/* ── Mapa 3D imagem ── */
+.brasil-map-wrap {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  align-items: center;
+  gap: 20px;
+  padding: 0 0 8px;
 }
 
-.resultado__item svg {
-  width: 18px;
-  height: 18px;
-  stroke: var(--green);
-  margin-bottom: 2px;
-}
-
-.resultado__item--roi {
-  border-color: rgba(31,159,59,0.35);
-}
-
-.resultado__label {
-  font-size: 0.72rem;
-  color: rgba(255,255,255,0.5);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.resultado__valor {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #fff;
-}
-
-.resultado__valor--green {
-  color: var(--green);
-  font-size: 1.2rem;
-}
-
-/* Barra de economia */
-.resultado__bar-wrap {
-  margin-bottom: 14px;
-}
-
-.resultado__bar-label {
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.55);
-  margin-bottom: 8px;
-}
-
-.resultado__bar-track {
-  height: 8px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 100px;
-  overflow: hidden;
-  margin-bottom: 6px;
-}
-
-.resultado__bar-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--green-dark), var(--green));
-  border-radius: 100px;
-  transition: width 1s ease;
-}
-
-.resultado__bar-val {
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.6);
-}
-
-.resultado__bar-val strong {
-  color: var(--green);
-}
-
-/* ── 3. MAPA DO BRASIL — 3D ISOMÉTRICO (branco/verde) ───── */
-.brasil-map-wrap {
-  position: relative;
+.brasil-mapa-img {
   width: 100%;
-  max-width: 520px;
-  margin: 0 auto;
-  padding: 30px 24px 70px;
-  overflow: visible;
-}
-
-.brasil-mapa-full {
-  width: 100%;
+  max-width: 460px;
   height: auto;
   display: block;
-  /* Perspectiva 3D isométrica: inclina o mapa como a referência */
-  transform: perspective(900px) rotateX(36deg) rotateZ(-20deg);
-  transform-origin: 50% 56%;
-  /* Sombra dura lateral (simula extrude) + sombra difusa no chão */
-  filter:
-    drop-shadow(7px 13px 0px rgba(170,170,170,0.70))
-    drop-shadow(3px 6px 0px rgba(170,170,170,0.40))
-    drop-shadow(0 45px 35px rgba(0,0,0,0.11));
+  filter: drop-shadow(0 16px 40px rgba(0,0,0,0.13));
+  border-radius: 4px;
 }
 
-/* Estados inativos — cinza claro */
-.br-estado {
-  fill: #ebebeb;
-  stroke: #c5c5c5;
-  stroke-width: 1.2;
-  transition: fill 0.25s ease;
-}
-
-.br-estado:hover {
-  fill: #d5d5d5;
-}
-
-/* Estados ativos (PI, MA, CE, TO, BA, DF) — verde da marca */
-.br-estado--ativo {
-  fill: var(--green);
-  stroke: #16852f;
-  stroke-width: 1.5;
-  opacity: 1;
-  animation: mapaFade 1.2s ease forwards;
-}
-
-.br-estado--df {
-  fill: var(--green);
-  opacity: 1;
-  stroke: #fff;
-  stroke-width: 2;
-}
-
-@keyframes mapaFade {
-  from { opacity: 0; transform: scale(0.97); }
-  to   { opacity: 1;  transform: scale(1);   }
-}
-
-/* Labels dos estados */
-.br-label {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 7.5px;
-  font-weight: 600;
-  fill: rgba(60,60,60,0.45);
-  text-anchor: middle;
-  pointer-events: none;
-}
-
-.br-label--ativo {
-  font-size: 8.5px;
-  font-weight: 800;
-  fill: #fff;
-}
-
-.br-label--df {
-  font-size: 7px;
-}
-
-/* Linhas de conexão */
-.br-conexoes line {
-  stroke: rgba(31,159,59,0.45);
-  stroke-width: 1.5;
-  stroke-dasharray: 4 3;
-}
-
-/* Pontos pulsantes */
-.br-pulso {
-  fill: var(--green);
-  stroke: #fff;
-  stroke-width: 1.5;
-  animation: pulso 2.2s ease-in-out infinite;
-}
-
-.br-pulso:nth-child(2) { animation-delay: 0.4s; }
-.br-pulso:nth-child(3) { animation-delay: 0.8s; }
-.br-pulso:nth-child(4) { animation-delay: 1.2s; }
-.br-pulso:nth-child(5) { animation-delay: 1.6s; }
-.br-pulso:nth-child(6) { animation-delay: 2.0s; }
-
-@keyframes pulso {
-  0%, 100% { r: 5; opacity: 1; }
-  50%       { r: 8; opacity: 0.6; }
-}
-
-/* Legenda do mapa */
 .brasil-map-legenda {
   display: flex;
   gap: 24px;
   justify-content: center;
-  margin-top: 24px;
-  flex-wrap: wrap;
+  align-items: center;
+  font-size: 0.78rem;
+  color: var(--gray-mid);
+  font-weight: 600;
 }
 
 .legenda-item {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 0.8rem;
-  color: var(--gray-mid);
+  gap: 7px;
 }
 
 .legenda-dot {
   width: 12px;
   height: 12px;
-  border-radius: 3px;
+  border-radius: 50%;
   background: #dedede;
   border: 1px solid #c5c5c5;
   flex-shrink: 0;
@@ -2225,20 +1818,10 @@ a.canal:hover { background: rgba(0,0,0,0.25); }
 
 .legenda-dot--ativo {
   background: var(--green);
-  border-color: var(--green);
+  border-color: #16852f;
 }
 
-/* Header logo maior */
-.header__logo img {
-  transition: transform 0.2s ease;
-}
-
-.header__logo img:hover { transform: scale(1.03); }
-
-@media (max-width: 767px) {
-  .brasil-map-wrap { max-width: 100%; padding: 20px 12px 55px; }
-  .brasil-mapa-full { max-height: 300px; width: auto; margin: 0 auto; }
-  .resultado__grid { grid-template-columns: 1fr 1fr; }
-  .resultado__destaque { flex-direction: column; text-align: center; }
-  .simulador__form-logo img { max-width: 130px; }
+/* Print styles */
+@media print {
+  .header, .whatsapp-float, .cookie-banner { display: none; }
 }
