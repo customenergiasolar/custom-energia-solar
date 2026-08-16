@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 56" fill="none" role="img" aria-label="Custom Energia Solar">
+  <!-- Símbolo: folha/C verde (cor original mantida para contraste no fundo escuro) -->
+  <path d="M26 8 C14 8 6 17 6 28 C6 39 14 48 26 48 C32 48 37.5 45.5 41.5 41.5 L35 35 C32.5 37.5 29.5 39 26 39 C19 39 14 34 14 28 C14 22 19 17 26 17 C29.5 17 32.5 18.5 35 21 L41.5 15 C37.5 11 32 8 26 8 Z" fill="#4CD964"/>
+  <!-- Detalhe folha superior -->
+  <path d="M34 8 C28 8 23 12 20 18 C23 15 27 14 31 15 C35 16 38 19 38 23 L46 18 C44 13 39.5 8 34 8 Z" fill="#4CD964" opacity="0.7"/>
+
+  <!-- Texto CUSTOM -->
+  <text x="54" y="31" font-family="Montserrat, Arial, sans-serif" font-weight="800" font-size="20" fill="#FFFFFF" letter-spacing="-0.5">CUSTOM</text>
+
+  <!-- Texto ENERGIA SOLAR -->
+  <text x="55" y="43" font-family="Montserrat, Arial, sans-serif" font-weight="600" font-size="9" fill="rgba(255,255,255,0.75)" letter-spacing="2.5">ENERGIA SOLAR</text>
+</svg>

@@ -1,0 +1,41 @@
+IMAGENS NECESSÁRIAS — Custom Energia Solar
+==========================================
+
+Copie os arquivos abaixo para esta pasta (assets/img/):
+
+OBRIGATÓRIAS
+------------
+logo.png          → Copiar de: 01-IDENTIDADE-VISUAL/Logotipos-Oficiais-e-Simbolo/LOGO/PRINCIPAL.png
+                    (logo verde + texto preto — fundo transparente, PNG)
+
+logo-white.png    → Versão branca do logo para o rodapé
+                    (se não tiver, pode usar o logo principal que já funciona com onerror)
+
+favicon.png       → Ícone do site (32x32 ou 64x64 px)
+                    Pode exportar do logo ou criar com https://favicon.io
+
+hero-bg.jpg       → Foto de fundo do Hero (instalação solar, qualidade alta, ~1920x1080px)
+                    Copiar de: 03-MATERIAIS-DE-MARKETING/FOTOS-REAIS-INSTALACOES/
+                    Escolha a melhor foto panorâmica de painéis solares instalados.
+
+og-image.jpg      → Imagem para compartilhamento em redes sociais (1200x630px)
+                    Pode ser a mesma do hero ou uma arte com logo e slogan.
+
+PROJETOS (6 fotos da seção Portfólio)
+--------------------------------------
+projeto-1.jpg     → Foto residencial (recomendado: ~800x560px)
+projeto-2.jpg     → Foto comercial
+projeto-3.jpg     → Foto industrial ou grande porte
+projeto-4.jpg     → Foto residencial alternativa
+projeto-5.jpg     → Foto comercial alternativa
+projeto-6.jpg     → Foto rural/agronegócio ou mais uma instalação
+
+Copiar de: 03-MATERIAIS-DE-MARKETING/FOTOS-REAIS-INSTALACOES/
+
+DICAS
+-----
+- Converta para WebP sempre que possível (melhor performance)
+- Redimensione o hero-bg para max 1920px de largura
+- As fotos de projeto devem ter proporção 4:3 idealmente
+- Use https://squoosh.app para comprimir sem perder qualidade
+- O site funciona mesmo sem as imagens (tem fallbacks/gradientes)

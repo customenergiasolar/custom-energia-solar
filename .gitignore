@@ -1,0 +1,30 @@
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node (caso use npm scripts futuramente)
+node_modules/
+npm-debug.log*
+yarn-error.log
+
+# Build / cache
+.vercel/
+.cache/
+dist/
+
+# Variáveis de ambiente
+.env
+.env.local
+.env.*.local
+
+# Arquivos temporários
+*.tmp
+*.bak

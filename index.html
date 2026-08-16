@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Custom Energia Solar — Soluções em energia solar para residências, empresas e indústrias em Brasília e todo o Brasil. Economize até 95% na conta de luz." />
+  <meta name="keywords" content="energia solar, painel solar, Brasília, economia de energia, instalação solar, Custom Energia Solar" />
+  <meta name="author" content="Custom Energia Solar Ltda" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://customenergiasolar.com.br/" />
+  <meta property="og:title" content="Custom Energia Solar — Economize até 95% na conta de luz" />
+  <meta property="og:description" content="Soluções em energia solar residencial, comercial e industrial. Mais de 200 projetos instalados em Brasília e Entorno." />
+  <meta property="og:image" content="https://customenergiasolar.com.br/assets/img/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <title>Custom Energia Solar — Economize até 95% na conta de luz</title>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Custom Energia Solar Ltda",
+    "url": "https://customenergiasolar.com.br",
+    "logo": "https://customenergiasolar.com.br/assets/img/logo.png",
+    "telephone": "+55-61-98109-3966",
+    "email": "contato@customenergiasolar.com.br",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Brasília",
+      "addressRegion": "DF",
+      "addressCountry": "BR"
+    },
+    "description": "Soluções completas em energia solar fotovoltaica para residências, comércios e indústrias.",
+    "areaServed": ["Brasília", "Goiás", "Entorno do DF"],
+    "priceRange": "$$"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#inicio" class="header__logo" aria-label="Custom Energia Solar — Início">
+        <img src="assets/img/logo.png" alt="Custom Energia Solar" width="160" height="48" />
+      </a>
+
+      <nav class="header__nav" id="mainNav" aria-label="Navegação principal">
+        <ul class="nav__list">
+          <li><a href="#solucoes" class="nav__link">Soluções</a></li>
+          <li><a href="#por-que-custom" class="nav__link">Por que a Custom</a></li>
+          <li><a href="#simulador" class="nav__link">Simulador</a></li>
+          <li><a href="#projetos" class="nav__link">Projetos</a></li>
+          <li><a href="#atuamos" class="nav__link">Atuação</a></li>
+          <li><a href="#depoimentos" class="nav__link">Depoimentos</a></li>
+          <li><a href="#faq" class="nav__link">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <a href="#contato" class="btn btn--primary header__cta">Fale Conosco</a>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" id="inicio" aria-label="Início">
+      <div class="hero__bg" aria-hidden="true">
+        <img src="assets/img/hero-bg.jpg" alt="" loading="eager" fetchpriority="high" />
+        <div class="hero__overlay"></div>
+      </div>
+
+      <div class="container hero__content">
+        <div class="hero__text fade-in">
+          <span class="hero__badge">🌿 Energia Limpa e Econômica</span>
+          <h1 class="hero__title">
+            TRANSFORME SOL<br/>
+            EM <span class="hero__title--accent">ECONOMIA</span>
+          </h1>
+          <p class="hero__subtitle">
+            Soluções completas em energia solar para residências, empresas e indústrias.<br/>
+            Reduza até <strong>95%</strong> da sua conta de luz e valorize seu patrimônio.
+          </p>
+          <div class="hero__actions">
+            <a href="#simulador" class="btn btn--primary btn--lg">
+              <i data-lucide="calculator"></i>
+              Simular Economia
+            </a>
+            <a href="#solucoes" class="btn btn--outline btn--lg">
+              Conhecer Soluções
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== STATS BAR ==================== -->
+    <section class="stats" aria-label="Números da Custom Energia Solar">
+      <div class="container stats__grid">
+        <div class="stats__item">
+          <strong class="stats__number" data-target="200" data-suffix="+">0</strong>
+          <span class="stats__label">Projetos Instalados</span>
+        </div>
+        <div class="stats__item">
+          <strong class="stats__number" data-target="95" data-suffix="%">0</strong>
+          <span class="stats__label">Economia na Conta</span>
+        </div>
+        <div class="stats__item">
+          <strong class="stats__number" data-target="6" data-suffix=" anos">0</strong>
+          <span class="stats__label">No Mercado</span>
+        </div>
+        <div class="stats__item">
+          <strong class="stats__number" data-target="100" data-suffix="%">0</strong>
+          <span class="stats__label">Clientes Satisfeitos</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SOLUÇÕES ==================== -->
+    <section class="solucoes section" id="solucoes" aria-label="Nossas Soluções">
+      <div class="container">
+        <div class="section__header fade-in">
+          <span class="section__tag">O QUE OFERECEMOS</span>
+          <h2 class="section__title">NOSSAS SOLUÇÕES</h2>
+          <p class="section__subtitle">Do projeto à manutenção, entregamos energia solar de ponta a ponta com qualidade e suporte contínuo.</p>
+        </div>
+
+        <div class="solucoes__grid">
+          <div class="card card--solution fade-in">
+            <div class="card__icon">
+              <i data-lucide="home"></i>
+            </div>
+            <h3 class="card__title">RESIDENCIAL</h3>
+            <p class="card__text">Sistema fotovoltaico dimensionado para sua residência. Reduza até 95% da conta de luz com instalação rápida e garantia total.</p>
+            <ul class="card__list">
+              <li><i data-lucide="check"></i> Análise de consumo gratuita</li>
+              <li><i data-lucide="check"></i> Projeto personalizado</li>
+              <li><i data-lucide="check"></i> Garantia de 25 anos nos painéis</li>
+            </ul>
+            <a href="#contato" class="btn btn--outline-green">Solicitar Orçamento</a>
+          </div>
+
+          <div class="card card--solution fade-in">
+            <div class="card__icon">
+              <i data-lucide="building-2"></i>
+            </div>
+            <h3 class="card__title">COMERCIAL</h3>
+            <p class="card__text">Reduza custos operacionais e aumente a competitividade do seu negócio com energia solar de alto desempenho.</p>
+            <ul class="card__list">
+              <li><i data-lucide="check"></i> Payback de 3 a 5 anos</li>
+              <li><i data-lucide="check"></i> Monitoramento em tempo real</li>
+              <li><i data-lucide="check"></i> ROI superior a 20% a.a.</li>
+            </ul>
+            <a href="#contato" class="btn btn--outline-green">Solicitar Orçamento</a>
+          </div>
+
+          <div class="card card--solution fade-in">
+            <div class="card__icon">
+              <i data-lucide="factory"></i>
+            </div>
+            <h3 class="card__title">INDUSTRIAL</h3>
+            <p class="card__text">Projetos de grande porte para indústrias e agroindústrias. Energia solar em escala com máxima eficiência e retorno garantido.</p>
+            <ul class="card__list">
+              <li><i data-lucide="check"></i> Projetos acima de 100 kWp</li>
+              <li><i data-lucide="check"></i> Financiamento facilitado</li>
+              <li><i data-lucide="check"></i> Suporte técnico dedicado</li>
+            </ul>
+            <a href="#contato" class="btn btn--outline-green">Solicitar Orçamento</a>
+          </div>
+
+          <div class="card card--solution fade-in">
+            <div class="card__icon">
+              <i data-lucide="wrench"></i>
+            </div>
+            <h3 class="card__title">MANUTENÇÃO</h3>
+            <p class="card__text">Planos de manutenção preventiva e corretiva para maximizar a geração e prolongar a vida útil do seu sistema solar.</p>
+            <ul class="card__list">
+              <li><i data-lucide="check"></i> Limpeza e inspeção periódica</li>
+              <li><i data-lucide="check"></i> Diagnóstico de performance</li>
+              <li><i data-lucide="check"></i> Suporte emergencial 24h</li>
+            </ul>
+            <a href="#contato" class="btn btn--outline-green">Solicitar Orçamento</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== POR QUE A CUSTOM ==================== -->
+    <section class="porque section" id="por-que-custom" aria-label="Por que escolher a Custom Energia Solar">
+      <div class="container">
+        <div class="section__header fade-in">
+          <span class="section__tag">NOSSOS DIFERENCIAIS</span>
+          <h2 class="section__title">POR QUE ESCOLHER A CUSTOM?</h2>
+          <p class="section__subtitle">Somos a escolha certa para quem busca qualidade, transparência e o melhor custo-benefício em energia solar.</p>
+        </div>
+
+        <div class="porque__grid">
+          <div class="diferencial fade-in">
+            <div class="diferencial__icon">
+              <i data-lucide="shield-check"></i>
+            </div>
+            <h3 class="diferencial__title">Equipamentos Premium</h3>
+            <p class="diferencial__text">Trabalhamos apenas com marcas certificadas e reconhecidas mundialmente, garantindo máxima eficiência e durabilidade.</p>
+          </div>
+
+          <div class="diferencial fade-in">
+            <div class="diferencial__icon">
+              <i data-lucide="users"></i>
+            </div>
+            <h3 class="diferencial__title">Equipe Certificada</h3>
+            <p class="diferencial__text">Engenheiros e técnicos com certificação CBENS e registro no CREA, garantindo instalação segura e dentro das normas.</p>
+          </div>
+
+          <div class="diferencial fade-in">
+            <div class="diferencial__icon">
+              <i data-lucide="trending-up"></i>
+            </div>
+            <h3 class="diferencial__title">Máximo Retorno</h3>
+            <p class="diferencial__text">Simulações precisas e projeto otimizado para garantir o melhor payback e retorno sobre investimento do mercado.</p>
+          </div>
+
+          <div class="diferencial fade-in">
+            <div class="diferencial__icon">
+              <i data-lucide="file-text"></i>
+            </div>
+            <h3 class="diferencial__title">Processo Simples</h3>
+            <p class="diferencial__text">Cuidamos de toda a burocracia: projeto, homologação na distribuidora, ANEEL e documentação técnica. Você não precisa se preocupar com nada.</p>
+          </div>
+
+          <div class="diferencial fade-in">
+            <div class="diferencial__icon">
+              <i data-lucide="headphones"></i>
+            </div>
+            <h3 class="diferencial__title">Suporte Pós-Venda</h3>
+            <p class="diferencial__text">Monitoramento da geração, suporte técnico e planos de manutenção para que seu sistema sempre opere no máximo desempenho.</p>
+          </div>
+
+          <div class="diferencial fade-in">
+            <div class="diferencial__icon">
+              <i data-lucide="leaf"></i>
+            </div>
+            <h3 class="diferencial__title">Impacto Ambiental</h3>
+            <p class="diferencial__text">Cada sistema instalado evita toneladas de CO₂ por ano. Faça parte da revolução energética e contribua para um planeta mais limpo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SIMULADOR ==================== -->
+    <section class="simulador section" id="simulador" aria-label="Simulador de Economia Solar">
+      <div class="container">
+        <div class="simulador__inner">
+          <div class="simulador__info fade-in">
+            <span class="section__tag section__tag--light">CALCULE AGORA</span>
+            <h2 class="section__title section__title--light">SIMULE SUA<br/>ECONOMIA</h2>
+            <p class="simulador__desc">Descubra em segundos quanto você pode economizar com energia solar. Digite o valor da sua conta de luz e veja o resultado!</p>
+
+            <div class="simulador__beneficios">
+              <div class="simulador__beneficio">
+                <i data-lucide="zap"></i>
+                <span>Até 95% de economia</span>
+              </div>
+              <div class="simulador__beneficio">
+                <i data-lucide="clock"></i>
+                <span>Payback em 3 a 5 anos</span>
+              </div>
+              <div class="simulador__beneficio">
+                <i data-lucide="sun"></i>
+                <span>25+ anos de geração</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="simulador__form-wrap fade-in">
+            <form class="simulador__form" id="simuladorForm" novalidate>
+              <h3 class="simulador__form-title">Calculadora Solar</h3>
+
+              <div class="form-group">
+                <label for="valorConta" class="form-label">Valor médio da sua conta de luz</label>
+                <div class="input-prefix">
+                  <span>R$</span>
+                  <input
+                    type="number"
+                    id="valorConta"
+                    name="valorConta"
+                    class="form-input"
+                    placeholder="Ex: 500"
+                    min="50"
+                    max="99999"
+                    inputmode="numeric"
+                    aria-describedby="valorContaHelp"
+                  />
+                </div>
+                <small id="valorContaHelp" class="form-help">Valor mensal em reais</small>
+              </div>
+
+              <div class="form-group">
+                <label for="emailSimulador" class="form-label">Seu melhor e-mail <span class="optional">(opcional)</span></label>
+                <input
+                  type="email"
+                  id="emailSimulador"
+                  name="emailSimulador"
+                  class="form-input"
+                  placeholder="voce@email.com"
+                />
+              </div>
+
+              <button type="submit" class="btn btn--white btn--block">
+                <i data-lucide="calculator"></i>
+                Calcular Economia
+              </button>
+            </form>
+
+            <!-- Resultado -->
+            <div class="simulador__resultado" id="simuladorResultado" aria-live="polite" hidden>
+              <h3 class="resultado__title">Sua estimativa de economia</h3>
+              <div class="resultado__grid">
+                <div class="resultado__item">
+                  <span class="resultado__label">Economia Mensal</span>
+                  <strong class="resultado__valor" id="resultEconomia">—</strong>
+                </div>
+                <div class="resultado__item">
+                  <span class="resultado__label">Economia Anual</span>
+                  <strong class="resultado__valor" id="resultAnual">—</strong>
+                </div>
+                <div class="resultado__item">
+                  <span class="resultado__label">Sistema Estimado</span>
+                  <strong class="resultado__valor" id="resultSistema">—</strong>
+                </div>
+                <div class="resultado__item">
+                  <span class="resultado__label">Payback Estimado</span>
+                  <strong class="resultado__valor" id="resultPayback">—</strong>
+                </div>
+              </div>
+              <p class="resultado__disclaimer">* Valores estimados. O projeto real pode variar conforme seu perfil de consumo.</p>
+              <a href="#" class="btn btn--white btn--block" id="btnWhatsappSimulador">
+                <i data-lucide="message-circle"></i>
+                Falar com Especialista no WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PROJETOS ==================== -->
+    <section class="projetos section" id="projetos" aria-label="Projetos Realizados">
+      <div class="container">
+        <div class="section__header fade-in">
+          <span class="section__tag">PORTFÓLIO</span>
+          <h2 class="section__title">PROJETOS REALIZADOS</h2>
+          <p class="section__subtitle">Conheça alguns dos mais de 200 projetos que já instalamos em Brasília e região.</p>
+        </div>
+
+        <div class="projetos__grid">
+          <figure class="projeto__item fade-in">
+            <img src="assets/img/projeto-1.jpg" alt="Instalação solar residencial — Brasília DF" loading="lazy" width="400" height="280" />
+            <figcaption class="projeto__caption">
+              <strong>Residencial — 8 kWp</strong>
+              <span>Brasília, DF</span>
+            </figcaption>
+          </figure>
+
+          <figure class="projeto__item fade-in">
+            <img src="assets/img/projeto-2.jpg" alt="Sistema solar comercial — empresa Brasília" loading="lazy" width="400" height="280" />
+            <figcaption class="projeto__caption">
+              <strong>Comercial — 32 kWp</strong>
+              <span>Taguatinga, DF</span>
+            </figcaption>
+          </figure>
+
+          <figure class="projeto__item fade-in">
+            <img src="assets/img/projeto-3.jpg" alt="Instalação solar industrial — Goiás" loading="lazy" width="400" height="280" />
+            <figcaption class="projeto__caption">
+              <strong>Industrial — 150 kWp</strong>
+              <span>Goiânia, GO</span>
+            </figcaption>
+          </figure>
+
+          <figure class="projeto__item fade-in">
+            <img src="assets/img/projeto-4.jpg" alt="Painel solar em telhado residencial" loading="lazy" width="400" height="280" />
+            <figcaption class="projeto__caption">
+              <strong>Residencial — 5 kWp</strong>
+              <span>Sobradinho, DF</span>
+            </figcaption>
+          </figure>
+
+          <figure class="projeto__item fade-in">
+            <img src="assets/img/projeto-5.jpg" alt="Usina solar comercial grande porte" loading="lazy" width="400" height="280" />
+            <figcaption class="projeto__caption">
+              <strong>Comercial — 60 kWp</strong>
+              <span>Anápolis, GO</span>
+            </figcaption>
+          </figure>
+
+          <figure class="projeto__item fade-in">
+            <img src="assets/img/projeto-6.jpg" alt="Sistema fotovoltaico rural agronegócio" loading="lazy" width="400" height="280" />
+            <figcaption class="projeto__caption">
+              <strong>Agro — 200 kWp</strong>
+              <span>Planaltina, DF</span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="projetos__cta fade-in">
+          <a href="#contato" class="btn btn--primary btn--lg">Ver Mais Projetos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ONDE ATUAMOS ==================== -->
+    <section class="atuamos section" id="atuamos" aria-label="Onde Atuamos">
+      <div class="container">
+        <div class="section__header fade-in">
+          <span class="section__tag">COBERTURA NACIONAL</span>
+          <h2 class="section__title">ONDE ATUAMOS</h2>
+          <p class="section__subtitle">Presente em 6 estados brasileiros, levando energia solar de qualidade do Nordeste ao Centro-Oeste.</p>
+        </div>
+
+        <div class="atuamos__inner">
+          <!-- Mapa simplificado do Brasil -->
+          <div class="atuamos__mapa fade-in" aria-hidden="true">
+            <svg viewBox="0 0 340 380" xmlns="http://www.w3.org/2000/svg" class="brasil-mapa">
+              <!-- Silhueta simplificada do Brasil -->
+              <path class="brasil-shape" d="
+                M100,20 L120,18 L145,22 L165,18 L190,24 L215,20 L240,28 L258,22 L270,30
+                L278,45 L285,60 L290,78 L295,95 L300,112 L305,130 L308,148 L310,165
+                L308,182 L305,198 L300,215 L295,230 L285,245 L275,258 L262,268
+                L250,275 L238,280 L225,282 L218,290 L212,300 L205,310 L198,322
+                L188,332 L178,340 L168,348 L158,352 L148,348 L140,338 L132,325
+                L125,312 L118,298 L112,285 L106,272 L100,258 L96,244 L92,230
+                L88,215 L85,200 L83,185 L82,168 L83,152 L85,136 L88,120
+                L92,104 L96,88 L98,72 L98,55 L100,40 Z
+              " />
+
+              <!-- Estado: Maranhão (MA) - Noroeste -->
+              <g class="estado-pin estado-ativo" data-estado="MA">
+                <circle cx="148" cy="105" r="16" class="pin-circle"/>
+                <text x="148" y="110" class="pin-text">MA</text>
+              </g>
+
+              <!-- Estado: Piauí (PI) - Norte-Nordeste -->
+              <g class="estado-pin estado-ativo" data-estado="PI">
+                <circle cx="192" cy="115" r="16" class="pin-circle"/>
+                <text x="192" y="120" class="pin-text">PI</text>
+              </g>
+
+              <!-- Estado: Ceará (CE) - Nordeste -->
+              <g class="estado-pin estado-ativo" data-estado="CE">
+                <circle cx="235" cy="100" r="16" class="pin-circle"/>
+                <text x="235" y="105" class="pin-text">CE</text>
+              </g>
+
+              <!-- Estado: Tocantins (TO) - Centro-Norte -->
+              <g class="estado-pin estado-ativo" data-estado="TO">
+                <circle cx="175" cy="178" r="16" class="pin-circle"/>
+                <text x="175" y="183" class="pin-text">TO</text>
+              </g>
+
+              <!-- Estado: Bahia (BA) - Leste-Centro -->
+              <g class="estado-pin estado-ativo" data-estado="BA">
+                <circle cx="222" cy="210" r="16" class="pin-circle"/>
+                <text x="222" y="215" class="pin-text">BA</text>
+              </g>
+
+              <!-- Estado: Distrito Federal (DF) - Centro-Oeste -->
+              <g class="estado-pin estado-ativo" data-estado="DF">
+                <circle cx="160" cy="238" r="16" class="pin-circle"/>
+                <text x="160" y="243" class="pin-text">DF</text>
+              </g>
+
+              <!-- Linhas conectando os estados (network visual) -->
+              <g class="conexoes" opacity="0.3">
+                <line x1="148" y1="105" x2="192" y2="115" />
+                <line x1="192" y1="115" x2="235" y2="100" />
+                <line x1="192" y1="115" x2="175" y2="178" />
+                <line x1="148" y1="105" x2="175" y2="178" />
+                <line x1="175" y1="178" x2="222" y2="210" />
+                <line x1="175" y1="178" x2="160" y2="238" />
+                <line x1="222" y1="210" x2="160" y2="238" />
+              </g>
+            </svg>
+          </div>
+
+          <!-- Cards dos estados -->
+          <div class="atuamos__estados">
+            <div class="estado-card fade-in">
+              <div class="estado-card__sigla">MA</div>
+              <div class="estado-card__info">
+                <strong>Maranhão</strong>
+                <span>São Luís e interior</span>
+              </div>
+            </div>
+
+            <div class="estado-card fade-in">
+              <div class="estado-card__sigla">PI</div>
+              <div class="estado-card__info">
+                <strong>Piauí</strong>
+                <span>Teresina e interior</span>
+              </div>
+            </div>
+
+            <div class="estado-card fade-in">
+              <div class="estado-card__sigla">CE</div>
+              <div class="estado-card__info">
+                <strong>Ceará</strong>
+                <span>Fortaleza e interior</span>
+              </div>
+            </div>
+
+            <div class="estado-card fade-in">
+              <div class="estado-card__sigla">TO</div>
+              <div class="estado-card__info">
+                <strong>Tocantins</strong>
+                <span>Palmas e interior</span>
+              </div>
+            </div>
+
+            <div class="estado-card fade-in">
+              <div class="estado-card__sigla">BA</div>
+              <div class="estado-card__info">
+                <strong>Bahia</strong>
+                <span>Salvador e interior</span>
+              </div>
+            </div>
+
+            <div class="estado-card fade-in">
+              <div class="estado-card__sigla">DF</div>
+              <div class="estado-card__info">
+                <strong>Distrito Federal</strong>
+                <span>Brasília e Entorno</span>
+              </div>
+            </div>
+
+            <div class="atuamos__cta fade-in">
+              <p>Não encontrou seu estado? Entre em contato — estamos em expansão!</p>
+              <a href="#contato" class="btn btn--primary">Fale Conosco</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== DEPOIMENTOS ==================== -->
+    <section class="depoimentos section" id="depoimentos" aria-label="Depoimentos de Clientes">
+      <div class="container">
+        <div class="section__header fade-in">
+          <span class="section__tag">DEPOIMENTOS</span>
+          <h2 class="section__title">O QUE NOSSOS CLIENTES DIZEM</h2>
+        </div>
+
+        <div class="carousel" id="carousel" role="region" aria-label="Carrossel de depoimentos">
+          <div class="carousel__track" id="carouselTrack">
+
+            <article class="testimonial" aria-label="Depoimento de João Augusto">
+              <div class="testimonial__stars" aria-label="5 estrelas">★★★★★</div>
+              <blockquote class="testimonial__text">
+                "Instalei um sistema de 10 kWp e minha conta de luz caiu de R$ 1.200 para menos de R$ 80 por mês. A equipe da Custom foi profissional do início ao fim. Super recomendo!"
+              </blockquote>
+              <footer class="testimonial__author">
+                <div class="testimonial__avatar" aria-hidden="true">JA</div>
+                <div>
+                  <strong class="testimonial__name">João Augusto</strong>
+                  <span class="testimonial__role">Empresário — Brasília, DF</span>
+                </div>
+              </footer>
+            </article>
+
+            <article class="testimonial" aria-label="Depoimento de Maria Clara">
+              <div class="testimonial__stars" aria-label="5 estrelas">★★★★★</div>
+              <blockquote class="testimonial__text">
+                "Pesquisei várias empresas antes de escolher a Custom. Fui pela transparência no orçamento e pela qualidade dos equipamentos. Hoje economizo R$ 650 todo mês. Melhor investimento da minha vida!"
+              </blockquote>
+              <footer class="testimonial__author">
+                <div class="testimonial__avatar" aria-hidden="true">MC</div>
+                <div>
+                  <strong class="testimonial__name">Maria Clara Ferreira</strong>
+                  <span class="testimonial__role">Professora — Taguatinga, DF</span>
+                </div>
+              </footer>
+            </article>
+
+            <article class="testimonial" aria-label="Depoimento de Ricardo Mendes">
+              <div class="testimonial__stars" aria-label="5 estrelas">★★★★★</div>
+              <blockquote class="testimonial__text">
+                "A Custom instalou 60 painéis na minha empresa. O processo foi rápido, a documentação toda foi cuidada por eles e o retorno do investimento está sendo incrível. Já estamos no segundo contrato!"
+              </blockquote>
+              <footer class="testimonial__author">
+                <div class="testimonial__avatar" aria-hidden="true">RM</div>
+                <div>
+                  <strong class="testimonial__name">Ricardo Mendes</strong>
+                  <span class="testimonial__role">Diretor Comercial — Goiânia, GO</span>
+                </div>
+              </footer>
+            </article>
+
+            <article class="testimonial" aria-label="Depoimento de Ana Paula">
+              <div class="testimonial__stars" aria-label="5 estrelas">★★★★★</div>
+              <blockquote class="testimonial__text">
+                "Sempre tive receio de instalar energia solar por não entender muito. A equipe da Custom explicou tudo com muita paciência, fez a visita técnica e cuidou de toda a homologação. Resultado: zero conta de luz!"
+              </blockquote>
+              <footer class="testimonial__author">
+                <div class="testimonial__avatar" aria-hidden="true">AP</div>
+                <div>
+                  <strong class="testimonial__name">Ana Paula Souza</strong>
+                  <span class="testimonial__role">Médica — Águas Claras, DF</span>
+                </div>
+              </footer>
+            </article>
+
+          </div><!-- /.carousel__track -->
+
+          <div class="carousel__controls">
+            <button class="carousel__btn carousel__btn--prev" id="carouselPrev" aria-label="Depoimento anterior">
+              <i data-lucide="chevron-left"></i>
+            </button>
+            <div class="carousel__dots" id="carouselDots" role="tablist" aria-label="Navegar depoimentos"></div>
+            <button class="carousel__btn carousel__btn--next" id="carouselNext" aria-label="Próximo depoimento">
+              <i data-lucide="chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FINANCIAMENTO ==================== -->
+    <section class="financiamento section" id="financiamento" aria-label="Opções de Financiamento">
+      <div class="container">
+        <div class="financiamento__inner">
+          <div class="financiamento__text fade-in">
+            <span class="section__tag section__tag--light">FINANCIAMENTO</span>
+            <h2 class="section__title section__title--light">ENERGIA SOLAR<br/>AO SEU ALCANCE</h2>
+            <p class="financiamento__desc">Não deixe o investimento inicial ser um obstáculo. Temos as melhores condições de financiamento do mercado com parceiros financeiros selecionados.</p>
+
+            <div class="financiamento__cards">
+              <div class="fin-card">
+                <i data-lucide="credit-card"></i>
+                <div>
+                  <strong>Financiamento Bancário</strong>
+                  <span>Taxas a partir de 0,79% a.m.</span>
+                </div>
+              </div>
+              <div class="fin-card">
+                <i data-lucide="landmark"></i>
+                <div>
+                  <strong>Linha BNB / BCB</strong>
+                  <span>Juros subsidiados para energia limpa</span>
+                </div>
+              </div>
+              <div class="fin-card">
+                <i data-lucide="percent"></i>
+                <div>
+                  <strong>Parcelamento Direto</strong>
+                  <span>Consulte condições especiais</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="financiamento__cta fade-in">
+            <div class="fin-highlight">
+              <i data-lucide="trending-up" class="fin-highlight__icon"></i>
+              <p class="fin-highlight__text">A parcela do financiamento costuma ser <strong>menor que a economia</strong> gerada pelo sistema.</p>
+              <p class="fin-highlight__sub">Na prática, você já economiza desde o primeiro mês!</p>
+              <a href="#contato" class="btn btn--primary btn--lg">Simular Financiamento</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FAQ ==================== -->
+    <section class="faq section" id="faq" aria-label="Perguntas Frequentes">
+      <div class="container">
+        <div class="section__header fade-in">
+          <span class="section__tag">DÚVIDAS</span>
+          <h2 class="section__title">PERGUNTAS FREQUENTES</h2>
+          <p class="section__subtitle">Respondemos as principais dúvidas sobre energia solar.</p>
+        </div>
+
+        <div class="faq__list" id="faqList">
+
+          <div class="faq__item fade-in">
+            <button class="faq__question" aria-expanded="false">
+              <span>Como funciona a energia solar fotovoltaica?</span>
+              <i data-lucide="chevron-down" class="faq__icon"></i>
+            </button>
+            <div class="faq__answer">
+              <p>Os painéis solares captam a luz do sol e convertem em energia elétrica de corrente contínua (CC). O inversor transforma essa energia em corrente alternada (CA), que alimenta todos os equipamentos da sua residência ou empresa. O excedente é injetado na rede da distribuidora, gerando créditos na sua conta de luz pelo sistema de compensação de energia.</p>
+            </div>
+          </div>
+
+          <div class="faq__item fade-in">
+            <button class="faq__question" aria-expanded="false">
+              <span>Quanto tempo leva a instalação?</span>
+              <i data-lucide="chevron-down" class="faq__icon"></i>
+            </button>
+            <div class="faq__answer">
+              <p>A instalação física de um sistema residencial leva de 1 a 3 dias úteis. Após a instalação, enviamos a documentação para a distribuidora (CEB/Neoenergia), que leva em média 30 a 60 dias para fazer a vistoria e habilitar a geração. A Custom cuida de todo esse processo sem que você precise se preocupar.</p>
+            </div>
+          </div>
+
+          <div class="faq__item fade-in">
+            <button class="faq__question" aria-expanded="false">
+              <span>O sistema funciona em dias nublados?</span>
+              <i data-lucide="chevron-down" class="faq__icon"></i>
+            </button>
+            <div class="faq__answer">
+              <p>Sim! Os painéis funcionam com luz difusa, não apenas com sol direto. Em dias nublados a geração é reduzida (cerca de 20 a 30% da capacidade), mas o sistema continua gerando energia. Brasília tem uma das maiores incidências solares do Brasil, com mais de 300 dias de sol por ano, tornando a região ideal para energia solar.</p>
+            </div>
+          </div>
+
+          <div class="faq__item fade-in">
+            <button class="faq__question" aria-expanded="false">
+              <span>Qual é a garantia dos equipamentos?</span>
+              <i data-lucide="chevron-down" class="faq__icon"></i>
+            </button>
+            <div class="faq__answer">
+              <p>Os painéis solares que utilizamos têm garantia de desempenho de 25 anos (mínimo 80% de eficiência) e garantia de produto de 10 a 12 anos. Os inversores têm garantia de 5 a 10 anos. A Custom oferece ainda garantia de instalação e serviço por 5 anos, e planos de manutenção preventiva para maximizar a vida útil do seu sistema.</p>
+            </div>
+          </div>
+
+          <div class="faq__item fade-in">
+            <button class="faq__question" aria-expanded="false">
+              <span>Qual é o retorno do investimento?</span>
+              <i data-lucide="chevron-down" class="faq__icon"></i>
+            </button>
+            <div class="faq__answer">
+              <p>O payback médio dos nossos sistemas fica entre 3 e 5 anos, dependendo do perfil de consumo e tipo de tarifa. Como os painéis têm vida útil de 25 a 30 anos, você tem 20 a 27 anos de energia praticamente gratuita após o payback. O retorno sobre investimento (ROI) anual costuma ser superior a 20%, muito acima da renda fixa tradicional.</p>
+            </div>
+          </div>
+
+          <div class="faq__item fade-in">
+            <button class="faq__question" aria-expanded="false">
+              <span>Preciso ter algum espaço específico para instalar?</span>
+              <i data-lucide="chevron-down" class="faq__icon"></i>
+            </button>
+            <div class="faq__answer">
+              <p>O espaço necessário varia conforme o tamanho do sistema. Em média, cada kWp de potência precisa de 6 a 8 m² de área disponível. Um sistema residencial típico de 4 kWp ocupa cerca de 25 a 30 m² de telhado. A Custom realiza uma visita técnica gratuita para avaliar as condições do seu telhado e definir o melhor posicionamento dos painéis.</p>
+            </div>
+          </div>
+
+        </div><!-- /.faq__list -->
+      </div>
+    </section>
+
+    <!-- ==================== CONTATO ==================== -->
+    <section class="contato section" id="contato" aria-label="Entre em Contato">
+      <div class="container">
+        <div class="contato__inner">
+          <div class="contato__info fade-in">
+            <span class="section__tag section__tag--light">FALE CONOSCO</span>
+            <h2 class="section__title section__title--light">PRONTO PARA<br/>ECONOMIZAR?</h2>
+            <p class="contato__desc">Nossa equipe está pronta para fazer a análise gratuita do seu consumo e apresentar a melhor solução em energia solar para você.</p>
+
+            <div class="contato__canais">
+              <a href="https://wa.me/5561981093966" target="_blank" rel="noopener" class="canal">
+                <i data-lucide="message-circle"></i>
+                <div>
+                  <strong>WhatsApp</strong>
+                  <span>(61) 9 8109-3966</span>
+                </div>
+              </a>
+              <a href="mailto:contato@customenergiasolar.com.br" class="canal">
+                <i data-lucide="mail"></i>
+                <div>
+                  <strong>E-mail</strong>
+                  <span>contato@customenergiasolar.com.br</span>
+                </div>
+              </a>
+              <div class="canal">
+                <i data-lucide="map-pin"></i>
+                <div>
+                  <strong>Localização</strong>
+                  <span>Brasília, DF — Atendemos todo o Brasil</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contato__form-wrap fade-in">
+            <form class="contato__form" id="contatoForm" novalidate>
+              <div class="form-group">
+                <label for="nome" class="form-label">Nome completo *</label>
+                <input type="text" id="nome" name="nome" class="form-input" placeholder="Seu nome" required autocomplete="name" />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="telefone" class="form-label">WhatsApp *</label>
+                  <input type="tel" id="telefone" name="telefone" class="form-input" placeholder="(61) 9 0000-0000" required autocomplete="tel" inputmode="tel" />
+                </div>
+                <div class="form-group">
+                  <label for="email" class="form-label">E-mail</label>
+                  <input type="email" id="email" name="email" class="form-input" placeholder="voce@email.com" autocomplete="email" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="tipo" class="form-label">Tipo de instalação *</label>
+                <select id="tipo" name="tipo" class="form-input form-select" required>
+                  <option value="" disabled selected>Selecione o tipo</option>
+                  <option value="residencial">Residencial</option>
+                  <option value="comercial">Comercial</option>
+                  <option value="industrial">Industrial</option>
+                  <option value="rural">Rural / Agronegócio</option>
+                  <option value="manutencao">Manutenção</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="mensagem" class="form-label">Mensagem <span class="optional">(opcional)</span></label>
+                <textarea id="mensagem" name="mensagem" class="form-input form-textarea" placeholder="Conte um pouco sobre seu projeto, consumo atual, local de instalação..." rows="4"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn--primary btn--block btn--lg">
+                <i data-lucide="send"></i>
+                Enviar pelo WhatsApp
+              </button>
+
+              <p class="form-privacy">
+                <i data-lucide="lock" style="width:12px;height:12px;"></i>
+                Seus dados são protegidos. Prometemos não enviar spam.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer" aria-label="Rodapé">
+    <div class="container footer__inner">
+
+      <div class="footer__brand">
+        <a href="#inicio" class="footer__logo">
+          <img src="assets/img/logo-white.svg" alt="Custom Energia Solar" width="160" height="48" onerror="this.onerror=null;this.src='assets/img/logo.png';this.style.filter='brightness(0) invert(1)'" />
+          <span class="footer__logo-text">Custom Energia Solar</span>
+        </a>
+        <p class="footer__tagline">Transformando sol em economia e futuro limpo para o Brasil.</p>
+        <div class="footer__social">
+          <a href="https://instagram.com/customenergiasolar" target="_blank" rel="noopener" aria-label="Instagram Custom Energia Solar">
+            <i data-lucide="instagram"></i>
+          </a>
+          <a href="https://facebook.com/customenergiasolar" target="_blank" rel="noopener" aria-label="Facebook Custom Energia Solar">
+            <i data-lucide="facebook"></i>
+          </a>
+          <a href="https://wa.me/5561981093966" target="_blank" rel="noopener" aria-label="WhatsApp Custom Energia Solar">
+            <i data-lucide="message-circle"></i>
+          </a>
+          <a href="https://linkedin.com/company/customenergiasolar" target="_blank" rel="noopener" aria-label="LinkedIn Custom Energia Solar">
+            <i data-lucide="linkedin"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__nav">
+        <h3 class="footer__nav-title">Soluções</h3>
+        <ul class="footer__nav-list">
+          <li><a href="#solucoes">Residencial</a></li>
+          <li><a href="#solucoes">Comercial</a></li>
+          <li><a href="#solucoes">Industrial</a></li>
+          <li><a href="#solucoes">Manutenção</a></li>
+          <li><a href="#financiamento">Financiamento</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__nav">
+        <h3 class="footer__nav-title">Empresa</h3>
+        <ul class="footer__nav-list">
+          <li><a href="#por-que-custom">Por que a Custom</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__nav">
+        <h3 class="footer__nav-title">Contato</h3>
+        <ul class="footer__nav-list footer__nav-list--contact">
+          <li>
+            <a href="https://wa.me/5561981093966" target="_blank" rel="noopener">
+              <i data-lucide="message-circle"></i>
+              (61) 9 8109-3966
+            </a>
+          </li>
+          <li>
+            <a href="mailto:contato@customenergiasolar.com.br">
+              <i data-lucide="mail"></i>
+              contato@customenergiasolar.com.br
+            </a>
+          </li>
+          <li>
+            <span>
+              <i data-lucide="map-pin"></i>
+              Brasília, DF
+            </span>
+          </li>
+        </ul>
+      </div>
+
+    </div><!-- /.footer__inner -->
+
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p>&copy; <span id="anoAtual"></span> Custom Energia Solar Ltda — CNPJ 53.261.263/0001-60. Todos os direitos reservados.</p>
+        <p class="footer__bottom-links">
+          <a href="#">Política de Privacidade</a>
+          <a href="#">Termos de Uso</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== WHATSAPP FLOAT ==================== -->
+  <a
+    href="https://wa.me/5561981093966?text=Olá!%20Quero%20saber%20mais%20sobre%20energia%20solar."
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener"
+    aria-label="Fale conosco pelo WhatsApp"
+    title="Fale conosco pelo WhatsApp"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.85L0 24l6.334-1.508C8.054 23.459 10.001 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-1.943 0-3.753-.528-5.296-1.444l-.38-.226-3.933.936.999-3.846-.248-.395C2.076 15.024 1.636 13.57 1.636 12 1.636 6.561 6.561 1.636 12 1.636S22.364 6.561 22.364 12 17.439 21.818 12 21.818z"/>
+    </svg>
+    <span class="whatsapp-float__tooltip">Fale no WhatsApp</span>
+  </a>
+
+  <!-- ==================== COOKIE CONSENT ==================== -->
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Aviso de cookies" hidden>
+    <div class="cookie-banner__inner">
+      <p class="cookie-banner__text">
+        Utilizamos cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa
+        <a href="#">Política de Privacidade</a>.
+      </p>
+      <div class="cookie-banner__actions">
+        <button class="btn btn--sm btn--outline-white" id="cookieReject">Apenas essenciais</button>
+        <button class="btn btn--sm btn--white" id="cookieAccept">Aceitar todos</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script src="js/script.js"></script>
+</body>
+</html>
