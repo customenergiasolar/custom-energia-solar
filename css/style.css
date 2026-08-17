@@ -898,6 +898,12 @@ input, select, textarea {
   cursor: pointer;
 }
 
+/* Garante texto visível nas opções nativas do select em todos os browsers */
+.form-select option {
+  color: #1a1a1a;
+  background-color: #ffffff;
+}
+
 .form-textarea { resize: vertical; min-height: 100px; }
 
 .form-row {

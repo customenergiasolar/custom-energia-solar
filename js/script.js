@@ -155,44 +155,14 @@ function initSimulador() {
 
   if (!form) return;
 
-  // Irradiação solar média por estado (kWh/kWp/dia) — maior = mais geração
-  const irradiacao = { DF: 5.5, PI: 6.1, MA: 5.8, CE: 6.2, TO: 5.7, BA: 5.9 };
-
-  // Taxa de economia por tipo de imóvel (% da conta coberta pelo solar)
-  const eficienciaTipo = {
-    residencial: 0.85,
-    comercial:   0.82,
-    industrial:  0.80,
-    rural:       0.88,
-  };
-
-  const tipoLabels = {
-    residencial: 'Residencial',
-    comercial:   'Comercial',
-    industrial:  'Industrial',
-    rural:       'Rural / Agronegócio',
-  };
-
-  const estadoLabels = {
-    DF: 'Brasília – DF',
-    PI: 'Piauí – PI',
-    MA: 'Maranhão – MA',
-    CE: 'Ceará – CE',
-    TO: 'Tocantins – TO',
-    BA: 'Bahia – BA',
-  };
+  let lastResults = null;
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const valorInput  = $('#valorConta');
-    const emailInput  = $('#emailSimulador');
-    const tipoInput   = $('#tipoImovel');
-    const estadoInput = $('#estadoSimulador');
-
-    const valor  = parseFloat(valorInput.value);
-    const tipo   = tipoInput   ? tipoInput.value   : 'residencial';
-    const estado = estadoInput ? estadoInput.value  : 'DF';
+    const valorInput = $('#valorConta');
+    const emailInput = $('#emailSimulador');
+    const valor = parseFloat(valorInput.value);
 
     if (!valor || valor < 50) {
       valorInput.focus();
@@ -207,58 +177,59 @@ function initSimulador() {
     valorInput.classList.remove('input-error');
     valorInput.removeAttribute('aria-invalid');
 
-    // ── Fórmulas aprimoradas ──
-    const fatorSolar   = (irradiacao[estado] || 5.5) / 5.5;          // fator relativo ao DF
-    const taxaEconomia = eficienciaTipo[tipo] || 0.85;
+    // Validação de e-mail obrigatório
+    const emailVal = emailInput ? emailInput.value.trim() : '';
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailVal || !emailRegex.test(emailVal)) {
+      if (emailInput) {
+        emailInput.focus();
+        emailInput.classList.add('input-error');
+        emailInput.setAttribute('aria-invalid', 'true');
+        emailInput.style.animation = 'shake 0.4s ease';
+        setTimeout(() => { emailInput.style.animation = ''; }, 400);
+      }
+      return;
+    }
+    if (emailInput) {
+      emailInput.classList.remove('input-error');
+      emailInput.removeAttribute('aria-invalid');
+    }
 
-    const economiaM   = valor * taxaEconomia;
+    // ── Fórmulas ──
+    const economiaM   = valor * 0.85;
     const economiaA   = economiaM * 12;
-    const sistemaKWp  = (valor / 250) * (1 / fatorSolar);            // estimativa baseada em tarifa média
-    const custoEst    = sistemaKWp * 4800;                            // custo médio por kWp instalado
+    const sistemaKWp  = valor * 0.12;
+    const custoEst    = sistemaKWp * 3500;
     const paybackAnos = custoEst / economiaA;
-    const roi         = (economiaA / custoEst) * 100;
-    const pctReducao  = Math.min(Math.round(taxaEconomia * 100), 95); // ex: 85%
 
-    const tipoLabel   = tipoLabels[tipo]   || tipo;
-    const estadoLabel = estadoLabels[estado] || estado;
+    lastResults = { valor, economiaM, economiaA, sistemaKWp, custoEst, paybackAnos };
 
     // ── Preenche resultado ──
-    const elSubtitle = $('#resultSubtitle');
-    const elEconomia = $('#resultEconomia');
-    const elAnual    = $('#resultAnual');
-    const elSistema  = $('#resultSistema');
-    const elPayback  = $('#resultPayback');
-    const elROI      = $('#resultROI');
-    const elBar      = $('#resultBar');
-    const elPct      = $('#resultPct');
-
-    if (elSubtitle) elSubtitle.textContent = `Sistema ${tipoLabel} · ${estadoLabel}`;
-    if (elEconomia) elEconomia.textContent = formatBRL(economiaM) + '/mês';
-    if (elAnual)    elAnual.textContent    = formatBRL(economiaA) + '/ano';
-    if (elSistema)  elSistema.textContent  = `~${sistemaKWp.toFixed(1)} kWp`;
-    if (elPayback)  elPayback.textContent  = `~${paybackAnos.toFixed(1)} anos`;
-    if (elROI)      elROI.textContent      = `~${roi.toFixed(0)}% a.a.`;
-    if (elPct)      elPct.textContent      = pctReducao + '%';
-
-    // Barra de progresso (animada)
-    if (elBar) {
-      elBar.style.width = '0%';
-      setTimeout(() => { elBar.style.width = pctReducao + '%'; }, 80);
-    }
+    $('#resultEconomia').textContent = formatBRL(economiaM) + '/mês';
+    $('#resultAnual').textContent    = formatBRL(economiaA) + '/ano';
+    $('#resultSistema').textContent  = `~${sistemaKWp.toFixed(1)} kWp`;
+    $('#resultPayback').textContent  = `~${paybackAnos.toFixed(1)} anos`;
 
     // ── Mostra resultado ──
     resultado.removeAttribute('hidden');
     resultado.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
-    // Reinicializa ícones Lucide que possam estar no bloco de resultado
-    if (typeof lucide !== 'undefined') lucide.createIcons();
-
     // ── Link WhatsApp ──
     const email = emailInput ? emailInput.value : '';
-    const msgWA = buildSimuladorWAMessage(
-      valor, economiaM, economiaA, sistemaKWp, paybackAnos, roi, email, tipoLabel, estadoLabel
-    );
+    const msgWA = buildSimuladorWAMessage(valor, economiaM, economiaA, sistemaKWp, paybackAnos, email);
     if (btnWA) btnWA.href = buildWhatsAppLink(msgWA);
+
+    // ── Captura de lead via Formspree ──
+    enviarLeadFormspree({
+      email: emailVal,
+      tipo_imovel: ($('#tipoImovel') ? $('#tipoImovel').options[$('#tipoImovel').selectedIndex].text : ''),
+      estado: ($('#estadoSimulador') ? $('#estadoSimulador').options[$('#estadoSimulador').selectedIndex].text : ''),
+      valor_conta: `R$ ${valor.toFixed(2).replace('.', ',')}`,
+      economia_mensal: formatBRL(economiaM),
+      economia_anual: formatBRL(economiaA),
+      sistema_kwp: `${sistemaKWp.toFixed(1)} kWp`,
+      payback: `${paybackAnos.toFixed(1)} anos`
+    });
   });
 
   // Reset ao limpar campo
@@ -271,16 +242,32 @@ function initSimulador() {
   }
 }
 
-function buildSimuladorWAMessage(valor, economiaM, economiaA, sistemaKWp, payback, roi, email, tipoLabel, estadoLabel) {
+// ─────────────────────────────────────────────
+// FORMSPREE — Captura de Leads
+// Substitua COLE_SEU_FORM_ID_AQUI pelo ID do seu formulário Formspree
+// Ex: se a URL for https://formspree.io/f/xpwzygab  →  use  xpwzygab
+// ─────────────────────────────────────────────
+const FORMSPREE_ID = 'COLE_SEU_FORM_ID_AQUI';
+
+function enviarLeadFormspree(dados) {
+  if (!FORMSPREE_ID || FORMSPREE_ID === 'COLE_SEU_FORM_ID_AQUI') return; // ID não configurado
+  fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({
+      _subject: `Novo lead simulador — ${dados.email}`,
+      ...dados
+    })
+  }).catch(() => {}); // silencioso — não interrompe o fluxo do usuário
+}
+
+function buildSimuladorWAMessage(valor, economiaM, economiaA, sistemaKWp, payback, email) {
   let msg = `Olá! Fiz a simulação no site da Custom Energia Solar:\n\n`;
-  msg += `🏠 Tipo: ${tipoLabel}\n`;
-  msg += `📍 Estado: ${estadoLabel}\n`;
   msg += `💡 Conta atual: ${formatBRL(valor)}/mês\n`;
   msg += `💰 Economia estimada: ${formatBRL(economiaM)}/mês\n`;
   msg += `📅 Economia anual: ${formatBRL(economiaA)}/ano\n`;
   msg += `⚡ Sistema estimado: ~${sistemaKWp.toFixed(1)} kWp\n`;
   msg += `📈 Payback: ~${payback.toFixed(1)} anos\n`;
-  msg += `💹 ROI: ~${roi.toFixed(0)}% a.a.\n`;
   if (email) msg += `📧 E-mail: ${email}\n`;
   msg += `\nGostaria de receber um orçamento personalizado!`;
   return msg;
