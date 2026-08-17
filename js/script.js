@@ -113,13 +113,14 @@ function initScrollAnimations() {
 
 /* ─── COUNT-UP STATS ──────────────────────────────────────────────────── */
 function initCountUp() {
-  const numbers = $$('.stats__number');
+  // Apenas elementos com data-target animam; os com stats__number--range ficam estáticos
+  const numbers = $$('.stats__number[data-target]');
   if (!numbers.length) return;
 
   const countUp = (el) => {
     const target = parseInt(el.dataset.target, 10);
     const suffix = el.dataset.suffix || '';
-    const duration = 1800;
+    const duration = 2000;
     const step = 16;
     const steps = Math.floor(duration / step);
     let current = 0;
@@ -131,7 +132,9 @@ function initCountUp() {
         current = target;
         clearInterval(timer);
       }
-      el.textContent = Math.floor(current) + suffix;
+      // Formata com separador de milhar para números grandes
+      const formatted = Math.floor(current).toLocaleString('pt-BR');
+      el.textContent = formatted + suffix;
     }, step);
   };
 
@@ -195,29 +198,82 @@ function initSimulador() {
       emailInput.removeAttribute('aria-invalid');
     }
 
+    // ── Custo de Disponibilidade — ANEEL REN 1000/2021 ──
+    // Valores padronizados nacionalmente; não variam por estado.
+    // Fonte: ANEEL Resolução Normativa 1000/2021, art. 98.
+    const CD_KWH = { mono: 30, bi2: 30, bi3: 50, tri: 100 };
+    const FASE_LABELS = {
+      mono: 'Monofásico',
+      bi2:  'Bifásico (2 condutores)',
+      bi3:  'Bifásico (3 condutores)',
+      tri:  'Trifásico'
+    };
+    const FASE_TIPOS = {
+      mono: 'monofásica',
+      bi2:  'bifásica (2 condutores)',
+      bi3:  'bifásica (3 condutores)',
+      tri:  'trifásica'
+    };
+    const faseEl    = $('#faseSimulador');
+    const fase      = faseEl ? faseEl.value : 'mono';
+    const cdKwh     = CD_KWH[fase] || 30;
+    const faseLabel = FASE_LABELS[fase] || 'Monofásico';
+    const faseTipo  = FASE_TIPOS[fase] || 'monofásica';
+
     // ── Fórmulas ──
     const economiaM   = valor * 0.85;
     const economiaA   = economiaM * 12;
     const sistemaKWp  = valor * 0.12;
     const custoEst    = sistemaKWp * 3500;
     const paybackAnos = custoEst / economiaA;
+    const roi         = Math.round((economiaA / custoEst) * 100);
 
     lastResults = { valor, economiaM, economiaA, sistemaKWp, custoEst, paybackAnos };
 
     // ── Fórmulas extras ──
-    const custoDia      = (valor - economiaM) / 30;
-    const custoEstTotal = sistemaKWp * 3500;
-    const valorImovel   = custoEstTotal * 0.10; // valorização estimada mínima ~10%
+    const custoDia    = (valor - economiaM) / 30;
+    const valorImovel = custoEst * 0.10; // valorização estimada mínima ~10%
+    const pctReducao  = Math.round((economiaM / valor) * 100);
+
+    // ── Subtitle dinâmico ──
+    const tipoImovelEl = $('#tipoImovel');
+    const estadoEl     = $('#estadoSimulador');
+    const tipoTexto    = tipoImovelEl ? tipoImovelEl.options[tipoImovelEl.selectedIndex].text.replace(/^.*? /, '') : 'Residencial';
+    const estadoTexto  = estadoEl    ? estadoEl.options[estadoEl.selectedIndex].text : 'DF';
+    const subtitleEl   = $('#resultSubtitle');
+    if (subtitleEl) subtitleEl.textContent = `${tipoTexto} · ${faseLabel} · ${estadoTexto}`;
 
     // ── Preenche resultado ──
-    $('#resultEconomia').textContent  = formatBRL(economiaM) + '/mês';
-    $('#resultAnual').textContent     = formatBRL(economiaA) + '/ano';
-    $('#resultSistema').textContent   = `~${sistemaKWp.toFixed(1)} kWp`;
-    $('#resultPayback').textContent   = `~${paybackAnos.toFixed(1)} anos`;
+    $('#resultEconomia').textContent = formatBRL(economiaM) + '/mês';
+    $('#resultAnual').textContent    = formatBRL(economiaA) + '/ano';
+    $('#resultSistema').textContent  = `~${sistemaKWp.toFixed(1)} kWp`;
+    $('#resultPayback').textContent  = `~${paybackAnos.toFixed(1)} anos`;
+
+    const elROI = $('#resultROI');
+    if (elROI) elROI.textContent = `~${roi}% a.a.`;
+
     const elCustoDia = $('#resultCustoDia');
     if (elCustoDia) elCustoDia.textContent = `~${formatBRL(custoDia)}/dia`;
+
     const elPatrimonio = $('#resultPatrimonio');
-    if (elPatrimonio) elPatrimonio.textContent = `+${formatBRL(valorImovel)} estimado`;
+    if (elPatrimonio) elPatrimonio.textContent = `+${formatBRL(valorImovel)} est.`;
+
+    // ── Barra de economia ──
+    const elBar = $('#resultBar');
+    const elPct = $('#resultPct');
+    if (elBar) elBar.style.width = `${Math.min(pctReducao, 100)}%`;
+    if (elPct) elPct.textContent = pctReducao;
+
+    // ── Bloco custo de disponibilidade ──
+    const elFaseLabel = $('#resultFaseLabel');
+    const elFaseTipo  = $('#resultFaseTipo');
+    const elCdKwh     = $('#resultCdKwh');
+    if (elFaseLabel) elFaseLabel.textContent = faseLabel;
+    if (elFaseTipo)  elFaseTipo.textContent  = faseTipo;
+    if (elCdKwh)     elCdKwh.textContent     = cdKwh;
+
+    // Reinicializar ícones do bloco CD (se recém inserido no DOM)
+    if (typeof lucide !== 'undefined') lucide.createIcons();
 
     // ── Mostra resultado ──
     resultado.removeAttribute('hidden');
@@ -225,19 +281,22 @@ function initSimulador() {
 
     // ── Link WhatsApp ──
     const email = emailInput ? emailInput.value : '';
-    const msgWA = buildSimuladorWAMessage(valor, economiaM, economiaA, sistemaKWp, paybackAnos, email);
+    const msgWA = buildSimuladorWAMessage(valor, economiaM, economiaA, sistemaKWp, paybackAnos, email, faseLabel, cdKwh);
     if (btnWA) btnWA.href = buildWhatsAppLink(msgWA);
 
     // ── Captura de lead via Formspree ──
     enviarLeadFormspree({
       email: emailVal,
-      tipo_imovel: ($('#tipoImovel') ? $('#tipoImovel').options[$('#tipoImovel').selectedIndex].text : ''),
-      estado: ($('#estadoSimulador') ? $('#estadoSimulador').options[$('#estadoSimulador').selectedIndex].text : ''),
-      valor_conta: `R$ ${valor.toFixed(2).replace('.', ',')}`,
+      tipo_imovel: tipoTexto,
+      estado:      estadoTexto,
+      fase:        faseLabel,
+      custo_disponibilidade_kwh: `${cdKwh} kWh/mês (ANEEL)`,
+      valor_conta:     `R$ ${valor.toFixed(2).replace('.', ',')}`,
       economia_mensal: formatBRL(economiaM),
-      economia_anual: formatBRL(economiaA),
-      sistema_kwp: `${sistemaKWp.toFixed(1)} kWp`,
-      payback: `${paybackAnos.toFixed(1)} anos`
+      economia_anual:  formatBRL(economiaA),
+      sistema_kwp:     `${sistemaKWp.toFixed(1)} kWp`,
+      payback:         `${paybackAnos.toFixed(1)} anos`,
+      roi_estimado:    `${roi}% a.a.`
     });
   });
 
@@ -270,14 +329,16 @@ function enviarLeadFormspree(dados) {
   }).catch(() => {}); // silencioso — não interrompe o fluxo do usuário
 }
 
-function buildSimuladorWAMessage(valor, economiaM, economiaA, sistemaKWp, payback, email) {
+function buildSimuladorWAMessage(valor, economiaM, economiaA, sistemaKWp, payback, email, faseLabel, cdKwh) {
   let msg = `Olá! Fiz a simulação no site da Custom Energia Solar:\n\n`;
   msg += `💡 Conta atual: ${formatBRL(valor)}/mês\n`;
   msg += `💰 Economia estimada: ${formatBRL(economiaM)}/mês\n`;
   msg += `📅 Economia anual: ${formatBRL(economiaA)}/ano\n`;
   msg += `⚡ Sistema estimado: ~${sistemaKWp.toFixed(1)} kWp\n`;
   msg += `📈 Payback: ~${payback.toFixed(1)} anos\n`;
-  if (email) msg += `📧 E-mail: ${email}\n`;
+  if (faseLabel) msg += `🔌 Tipo de ligação: ${faseLabel}\n`;
+  if (cdKwh)     msg += `📋 Custo de disponibilidade (ANEEL): ${cdKwh} kWh/mês\n`;
+  if (email)     msg += `📧 E-mail: ${email}\n`;
   msg += `\nGostaria de receber um orçamento personalizado!`;
   return msg;
 }

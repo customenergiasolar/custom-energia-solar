@@ -44,8 +44,8 @@
     "email": "contato@customenergiasolar.com.br",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Brasília",
-      "addressRegion": "DF",
+      "addressLocality": "Barreiras",
+      "addressRegion": "BA",
       "addressCountry": "BR"
     },
     "description": "Soluções completas em energia solar fotovoltaica para residências, comércios e indústrias.",
@@ -102,7 +102,7 @@
             ECONOMIZE POR <span class="hero__title--accent">25 ANOS</span>
           </h1>
           <p class="hero__subtitle">
-            Sua conta de luz cai entre 85% e 95% — com projeto assinado por engenheiro CREA,<br/>
+            Sua conta de luz cai entre 70% e 90% — com projeto assinado por engenheiro CREA,<br/>
             equipamentos certificados pelo INMETRO e garantia de quem assina cada projeto.
           </p>
           <div class="hero__actions">
@@ -123,20 +123,20 @@
     <section class="stats" aria-label="Números da Custom Energia Solar">
       <div class="container stats__grid">
         <div class="stats__item">
-          <strong class="stats__number" data-target="200" data-suffix="+">0</strong>
+          <strong class="stats__number" data-target="5000" data-suffix="+">0</strong>
           <span class="stats__label">Projetos Instalados</span>
         </div>
         <div class="stats__item">
-          <strong class="stats__number" data-target="95" data-suffix="%">0</strong>
-          <span class="stats__label">Economia na Conta</span>
+          <strong class="stats__number stats__number--range">70–90%</strong>
+          <span class="stats__label">de Economia na Conta</span>
         </div>
         <div class="stats__item">
           <strong class="stats__number" data-target="6" data-suffix=" anos">0</strong>
-          <span class="stats__label">No Mercado</span>
+          <span class="stats__label">de Atuação Fotovoltaica</span>
         </div>
         <div class="stats__item">
-          <strong class="stats__number" data-target="100" data-suffix="%">0</strong>
-          <span class="stats__label">Clientes Satisfeitos</span>
+          <strong class="stats__number stats__number--range">★★★★★</strong>
+          <span class="stats__label">Satisfação dos Clientes</span>
         </div>
       </div>
     </section>
@@ -147,7 +147,7 @@
         <div class="section__header fade-in">
           <span class="section__tag">O QUE OFERECEMOS</span>
           <h2 class="section__title">NOSSAS SOLUÇÕES</h2>
-          <p class="section__subtitle">Do projeto à manutenção, entregamos energia solar de ponta a ponta com qualidade e suporte contínuo.</p>
+          <p class="section__subtitle">Mais de 5.000 projetos entregues. Do diagnóstico à homologação, cuidamos de tudo com qualidade, prazo e responsabilidade técnica.</p>
         </div>
 
         <div class="solucoes__photo-grid">
@@ -160,7 +160,7 @@
               <div class="sol-card__content">
                 <div class="sol-card__icon"><i data-lucide="home"></i></div>
                 <h3 class="sol-card__title">RESIDENCIAL</h3>
-                <p class="sol-card__desc">Reduza até 95% da sua conta de luz com um sistema projetado para a sua casa. Do diagnóstico à instalação, cuidamos de tudo.</p>
+                <p class="sol-card__desc">Reduza de 70% a 90% da sua conta de luz com um sistema projetado para a sua casa. Do diagnóstico à homologação, cuidamos de tudo.</p>
                 <a href="#contato" class="sol-card__cta">Solicitar orçamento <i data-lucide="arrow-right"></i></a>
               </div>
             </div>
@@ -267,7 +267,7 @@
               <i data-lucide="building"></i>
             </div>
             <h3 class="diferencial__title">Empresa com CNPJ Ativo e Sede Física em Brasília</h3>
-            <p class="diferencial__text">CNPJ 53.418.555/0001-14 ativo na Receita Federal, endereço físico no DF e contratos com ART registrada. <strong>Você pode confirmar nossa idoneidade antes de assinar</strong> — e isso nos dá orgulho.</p>
+            <p class="diferencial__text">CNPJ 53.418.555/0001-14 ativo na Receita Federal, sede em Barreiras, BA e contratos com ART registrada. <strong>Você pode confirmar nossa idoneidade antes de assinar</strong> — e isso nos dá orgulho.</p>
           </div>
         </div>
       </div>
@@ -285,7 +285,7 @@
             <div class="simulador__beneficios">
               <div class="simulador__beneficio">
                 <i data-lucide="trending-down"></i>
-                <span>85% a 95% de redução na conta</span>
+                <span>70% a 90% de redução na conta</span>
               </div>
               <div class="simulador__beneficio">
                 <i data-lucide="clock"></i>
@@ -303,7 +303,7 @@
 
               <!-- Logo da empresa -->
               <div class="simulador__form-logo">
-                <img src="assets/img/logo-white.svg" alt="Custom Energia Solar" width="160" height="48"
+                <img src="assets/img/logo-white.svg" alt="Custom Energia Solar"
                      onerror="this.onerror=null;this.src='assets/img/logo.png';this.style.filter='brightness(0) invert(1)'" />
               </div>
 
@@ -332,6 +332,18 @@
                   <option value="TO">Tocantins – TO</option>
                   <option value="BA">Bahia – BA</option>
                 </select>
+              </div>
+
+              <!-- Tipo de ligação elétrica (fase) -->
+              <div class="form-group">
+                <label for="faseSimulador" class="form-label">Tipo de ligação elétrica</label>
+                <select id="faseSimulador" name="faseSimulador" class="form-input form-select">
+                  <option value="mono" selected>⚡ Monofásico (mín. 30 kWh/mês)</option>
+                  <option value="bi2">⚡⚡ Bifásico — 2 condutores (mín. 30 kWh/mês)</option>
+                  <option value="bi3">⚡⚡ Bifásico — 3 condutores (mín. 50 kWh/mês)</option>
+                  <option value="tri">⚡⚡⚡ Trifásico (mín. 100 kWh/mês)</option>
+                </select>
+                <small class="form-help">Verifique no quadro de medidores ou na sua conta de luz</small>
               </div>
 
               <!-- Valor da conta -->
@@ -428,16 +440,25 @@
                 </div>
               </div>
 
+              <!-- Custo de Disponibilidade (ANEEL) -->
+              <div class="resultado__cd" id="resultCdBlock">
+                <i data-lucide="info"></i>
+                <div>
+                  <strong>Custo de Disponibilidade — <span id="resultFaseLabel">Monofásico</span></strong>
+                  <p>Sua ligação <strong><span id="resultFaseTipo">monofásica</span></strong> tem consumo mínimo de <strong><span id="resultCdKwh">30</span> kWh/mês</strong> pela ANEEL (REN 1000/2021). Esse custo existe independente do sistema solar — é o mínimo cobrado por estar conectado à rede elétrica.</p>
+                </div>
+              </div>
+
               <!-- Barra de economia -->
               <div class="resultado__bar-wrap">
                 <div class="resultado__bar-label">Redução estimada na conta</div>
                 <div class="resultado__bar-track">
                   <div class="resultado__bar-fill" id="resultBar" style="width:0%"></div>
                 </div>
-                <div class="resultado__bar-val">até <strong id="resultPct">85%</strong> de redução</div>
+                <div class="resultado__bar-val">entre <strong id="resultPct">70</strong>% e 90% de redução</div>
               </div>
 
-              <p class="resultado__disclaimer">* Estimativa baseada no perfil informado. Valorização patrimonial estimada com base em referências do mercado imobiliário. Valores reais variam conforme projeto técnico.</p>
+              <p class="resultado__disclaimer">* Estimativa baseada no perfil informado. O custo de disponibilidade (mínimo mensal) é padronizado pela ANEEL e não é eliminável com energia solar. Valorização patrimonial estimada com base em referências do mercado imobiliário. Valores reais variam conforme projeto técnico e tarifa local.</p>
               <a href="#" class="btn btn--white btn--block" id="btnWhatsappSimulador">
                 <i data-lucide="message-circle"></i>
                 Quero Visita Técnica Gratuita
@@ -454,7 +475,7 @@
         <div class="section__header fade-in">
           <span class="section__tag">PORTFÓLIO</span>
           <h2 class="section__title">PROJETOS REALIZADOS</h2>
-          <p class="section__subtitle">Conheça alguns dos mais de 200 projetos que já instalamos em Brasília e região.</p>
+          <p class="section__subtitle">Mais de 5.000 projetos instalados em Brasília, DF e outras regiões do Brasil. Confira alguns exemplos do nosso trabalho.</p>
         </div>
 
         <div class="projetos__grid">
@@ -911,7 +932,7 @@
               <i data-lucide="chevron-down" class="faq__icon"></i>
             </button>
             <div class="faq__answer">
-              <p>Os painéis têm <strong>garantia de desempenho de 25 anos diretamente com o fabricante</strong> — isso não depende da instaladora existir. A garantia é acionada diretamente com a marca do equipamento. Além disso, a Custom oferece <strong>5 anos de garantia sobre o serviço de instalação</strong> e monitoramento remoto para identificar qualquer queda de desempenho antes que você perceba na conta de luz.</p>
+              <p>Os painéis têm <strong>garantia de desempenho de 25 anos diretamente com o fabricante</strong> — isso não depende da instaladora existir. A garantia é acionada diretamente com a marca do equipamento. Além disso, a Custom oferece <strong>1 ano de garantia sobre o serviço de instalação</strong> e monitoramento remoto para identificar qualquer queda de desempenho antes que você perceba na conta de luz.</p>
             </div>
           </div>
 
@@ -932,7 +953,7 @@
               <i data-lucide="chevron-down" class="faq__icon"></i>
             </button>
             <div class="faq__answer">
-              <p>A instalação física de um sistema residencial leva de 1 a 3 dias úteis. Após a instalação, enviamos a documentação para a distribuidora (CEB/Neoenergia), que leva em média 30 a 60 dias para fazer a vistoria e habilitar a geração. A Custom cuida de todo esse processo sem que você precise se preocupar.</p>
+              <p>A instalação física de um sistema residencial leva de 1 a 3 dias úteis. Após a instalação, enviamos a documentação para a distribuidora (CEB, Neoenergia, Equatorial e demais), que leva em média 30 a 60 dias para fazer a vistoria e habilitar a geração. A Custom cuida de todo esse processo sem que você precise se preocupar.</p>
             </div>
           </div>
 
@@ -952,7 +973,7 @@
               <i data-lucide="chevron-down" class="faq__icon"></i>
             </button>
             <div class="faq__answer">
-              <p>Os painéis solares que utilizamos têm garantia de desempenho de 25 anos (mínimo 80% de eficiência) e garantia de produto de 10 a 12 anos. Os inversores têm garantia de 5 a 10 anos. A Custom oferece ainda garantia de instalação e serviço por 5 anos, e planos de manutenção preventiva para maximizar a vida útil do seu sistema.</p>
+              <p>Os painéis solares que utilizamos têm garantia de desempenho de 25 anos (mínimo 80% de eficiência) e garantia de produto de 10 a 12 anos. Os inversores têm garantia de 5 a 10 anos. A Custom oferece ainda garantia de instalação e serviço por <strong>1 ano</strong>, e planos de manutenção preventiva para maximizar a vida útil do seu sistema.</p>
             </div>
           </div>
 
@@ -1016,7 +1037,7 @@
             <div class="processo__icon"><i data-lucide="send"></i></div>
             <div class="processo__conteudo">
               <h3 class="processo__titulo">Aprovação na Distribuidora</h3>
-              <p class="processo__desc">Enviamos toda a documentação para a CEB/Neoenergia. Acompanhamos e respondemos às solicitações técnicas no lugar de você.</p>
+              <p class="processo__desc">Enviamos toda a documentação para a distribuidora (CEB, Neoenergia, Equatorial e demais). Acompanhamos e respondemos às solicitações técnicas no lugar de você.</p>
               <span class="processo__prazo">Dias 8 a 35</span>
             </div>
           </div>
@@ -1075,8 +1096,8 @@
             <div class="transp__item">
               <i data-lucide="map-pin"></i>
               <div>
-                <strong>Sede</strong>
-                <span>Brasília, Distrito Federal</span>
+                <strong>Sede Fiscal</strong>
+                <span>Barreiras, Bahia</span>
               </div>
             </div>
             <div class="transp__item">
@@ -1135,8 +1156,8 @@
               <div class="canal">
                 <i data-lucide="map-pin"></i>
                 <div>
-                  <strong>Localização</strong>
-                  <span>Brasília, DF — Atendemos todo o Brasil</span>
+                  <strong>Atendimento</strong>
+                  <span>Brasília, DF e todo o Brasil</span>
                 </div>
               </div>
             </div>
@@ -1200,22 +1221,22 @@
 
       <div class="footer__brand">
         <a href="#inicio" class="footer__logo">
-          <img src="assets/img/logo-white.svg" alt="Custom Energia Solar" width="160" height="48" onerror="this.onerror=null;this.src='assets/img/logo.png';this.style.filter='brightness(0) invert(1)'" />
+          <img src="assets/img/logo-white.svg" alt="Custom Energia Solar" class="footer__logo-img" onerror="this.onerror=null;this.src='assets/img/logo.png';this.style.filter='brightness(0) invert(1)'" />
           <span class="footer__logo-text">Custom Energia Solar</span>
         </a>
         <p class="footer__tagline">Transformando sol em economia e futuro limpo para o Brasil.</p>
         <div class="footer__social">
-          <a href="https://instagram.com/customenergiasolar" target="_blank" rel="noopener" aria-label="Instagram Custom Energia Solar">
-            <i data-lucide="instagram"></i>
+          <a href="https://instagram.com/customenergiasolar" target="_blank" rel="noopener" aria-label="Instagram Custom Energia Solar" class="footer__social-link footer__social-link--instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            <span>Instagram</span>
           </a>
-          <a href="https://facebook.com/customenergiasolar" target="_blank" rel="noopener" aria-label="Facebook Custom Energia Solar">
-            <i data-lucide="facebook"></i>
+          <a href="https://facebook.com/customenergiasolar" target="_blank" rel="noopener" aria-label="Facebook Custom Energia Solar" class="footer__social-link footer__social-link--facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            <span>Facebook</span>
           </a>
-          <a href="https://wa.me/5561981093966" target="_blank" rel="noopener" aria-label="WhatsApp Custom Energia Solar">
-            <i data-lucide="message-circle"></i>
-          </a>
-          <a href="https://linkedin.com/company/customenergiasolar" target="_blank" rel="noopener" aria-label="LinkedIn Custom Energia Solar">
-            <i data-lucide="linkedin"></i>
+          <a href="https://wa.me/5561981093966" target="_blank" rel="noopener" aria-label="WhatsApp Custom Energia Solar" class="footer__social-link footer__social-link--whatsapp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            <span>WhatsApp</span>
           </a>
         </div>
       </div>
@@ -1259,7 +1280,7 @@
           <li>
             <span>
               <i data-lucide="map-pin"></i>
-              Brasília, DF
+              Barreiras, BA — Atendimento em todo o Brasil
             </span>
           </li>
         </ul>
@@ -1274,6 +1295,9 @@
           <a href="#">Política de Privacidade</a>
           <a href="#">Termos de Uso</a>
         </p>
+      </div>
+      <div class="container footer__dev">
+        <p>Site desenvolvido por <strong>Coringa Tecnologia e Infraestrutura</strong></p>
       </div>
     </div>
   </footer>

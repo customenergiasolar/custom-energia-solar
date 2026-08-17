@@ -473,6 +473,12 @@ input, select, textarea {
   line-height: 1;
 }
 
+/* Itens estáticos (range de %, estrelas) — tamanho ligeiramente menor para caber */
+.stats__number--range {
+  font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+  letter-spacing: -0.01em;
+}
+
 .stats__label {
   font-size: 0.8rem;
   font-weight: 600;
@@ -777,6 +783,30 @@ input, select, textarea {
   padding: 32px 28px;
 }
 
+/* ─── SIMULADOR LOGO ─────────────────────────────────────────── */
+.simulador__form-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.simulador__form-logo img {
+  height: 44px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  display: block;
+}
+
+.footer__logo-img {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+}
+
 .simulador__form-title {
   font-size: 1.2rem;
   font-weight: 800;
@@ -979,6 +1009,48 @@ input, select, textarea {
   color: rgba(255,255,255,0.55);
   text-align: center;
   margin-bottom: 16px;
+}
+
+/* ─── CUSTO DE DISPONIBILIDADE (FASE / ANEEL) ───────────────── */
+.resultado__cd {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: rgba(31, 159, 59, 0.08);
+  border: 1px solid rgba(31, 159, 59, 0.3);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  margin: 16px 0 8px;
+}
+
+.resultado__cd svg {
+  width: 18px;
+  height: 18px;
+  color: var(--green);
+  stroke: var(--green);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.resultado__cd strong {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.9);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.resultado__cd p {
+  font-size: 0.76rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.resultado__cd strong span,
+.resultado__cd p strong {
+  color: var(--green);
+  font-weight: 700;
 }
 
 /* ─── PROJETOS ──────────────────────────────────────────────── */
@@ -1452,27 +1524,66 @@ a.canal:hover { background: rgba(0,0,0,0.25); }
 }
 
 .footer__social a {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.15);
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.15);
   transition: all var(--transition);
-  color: rgba(255,255,255,0.65);
+  color: rgba(255,255,255,0.75);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer__social a span {
+  display: inline;
 }
 
 .footer__social a:hover {
-  background: var(--green);
-  border-color: var(--green);
-  color: var(--white);
+  transform: translateY(-2px);
+  border-color: transparent;
+}
+
+.footer__social-link--instagram:hover {
+  background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: #fff;
+}
+
+.footer__social-link--facebook:hover {
+  background: #1877f2;
+  color: #fff;
+}
+
+.footer__social-link--whatsapp:hover {
+  background: #25d366;
+  color: #fff;
 }
 
 .footer__social svg {
-  width: 16px;
-  height: 16px;
-  stroke: currentColor;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* ─── FOOTER DEV CREDIT ─────────────────────────────────────── */
+.footer__dev {
+  padding-top: 10px;
+  padding-bottom: 4px;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  margin-top: 8px;
+}
+
+.footer__dev p {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.25);
+}
+
+.footer__dev strong {
+  color: rgba(255,255,255,0.4);
+  font-weight: 600;
 }
 
 .footer__nav-title {
