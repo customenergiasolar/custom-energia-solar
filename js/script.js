@@ -220,19 +220,31 @@ function initSimulador() {
     const faseLabel = FASE_LABELS[fase] || 'Monofásico';
     const faseTipo  = FASE_TIPOS[fase] || 'monofásica';
 
+    // ── Parâmetros de dimensionamento ──────────────────────────────────────
+    // Tarifa média nacional (ANEEL — mix residencial/comercial, c/ impostos): ~R$ 0,85/kWh
+    // Geração estimada por kWp (CRESESB/INMET — média conservadora Brasil): ~100 kWh/mês
+    // Custo médio instalado (referência mercado brasileiro, 2024): ~R$ 4.500/kWp
+    // Cobertura do sistema: ~85% do consumo (custo de disponibilidade não é eliminável)
+    const TARIFA_MEDIA  = 0.85;   // R$/kWh
+    const GERACAO_KWP   = 100;    // kWh/mês por kWp instalado
+    const CUSTO_KWP     = 4500;   // R$/kWp
+    const PCT_COBERTURA = 0.85;   // fração do consumo coberta pelo sistema
+
     // ── Fórmulas ──
-    const economiaM   = valor * 0.85;
-    const economiaA   = economiaM * 12;
-    const sistemaKWp  = valor * 0.12;
-    const custoEst    = sistemaKWp * 3500;
-    const paybackAnos = custoEst / economiaA;
-    const roi         = Math.round((economiaA / custoEst) * 100);
+    const consumoMensal = valor / TARIFA_MEDIA;                          // kWh/mês estimado
+    const economiaM     = valor * PCT_COBERTURA;                         // R$/mês de economia
+    const economiaA     = economiaM * 12;                                // R$/ano de economia
+    const sistemaKWp    = (consumoMensal * PCT_COBERTURA) / GERACAO_KWP; // kWp necessário
+    const custoEst      = sistemaKWp * CUSTO_KWP;                        // R$ custo estimado
+    const paybackAnos   = custoEst / economiaA;                          // anos para retorno
+    const roi           = Math.round((economiaA / custoEst) * 100);      // % retorno a.a.
 
     lastResults = { valor, economiaM, economiaA, sistemaKWp, custoEst, paybackAnos };
 
     // ── Fórmulas extras ──
     const custoDia    = (valor - economiaM) / 30;
-    const valorImovel = custoEst * 0.10; // valorização estimada mínima ~10%
+    // Valorização do imóvel: sistema instalado agrega ~85% do custo como valor ao patrimônio
+    const valorImovel = custoEst * 0.85;
     const pctReducao  = Math.round((economiaM / valor) * 100);
 
     // ── Subtitle dinâmico ──
