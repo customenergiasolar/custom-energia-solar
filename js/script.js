@@ -204,11 +204,20 @@ function initSimulador() {
 
     lastResults = { valor, economiaM, economiaA, sistemaKWp, custoEst, paybackAnos };
 
+    // ── Fórmulas extras ──
+    const custoDia      = (valor - economiaM) / 30;
+    const custoEstTotal = sistemaKWp * 3500;
+    const valorImovel   = custoEstTotal * 0.10; // valorização estimada mínima ~10%
+
     // ── Preenche resultado ──
-    $('#resultEconomia').textContent = formatBRL(economiaM) + '/mês';
-    $('#resultAnual').textContent    = formatBRL(economiaA) + '/ano';
-    $('#resultSistema').textContent  = `~${sistemaKWp.toFixed(1)} kWp`;
-    $('#resultPayback').textContent  = `~${paybackAnos.toFixed(1)} anos`;
+    $('#resultEconomia').textContent  = formatBRL(economiaM) + '/mês';
+    $('#resultAnual').textContent     = formatBRL(economiaA) + '/ano';
+    $('#resultSistema').textContent   = `~${sistemaKWp.toFixed(1)} kWp`;
+    $('#resultPayback').textContent   = `~${paybackAnos.toFixed(1)} anos`;
+    const elCustoDia = $('#resultCustoDia');
+    if (elCustoDia) elCustoDia.textContent = `~${formatBRL(custoDia)}/dia`;
+    const elPatrimonio = $('#resultPatrimonio');
+    if (elPatrimonio) elPatrimonio.textContent = `+${formatBRL(valorImovel)} estimado`;
 
     // ── Mostra resultado ──
     resultado.removeAttribute('hidden');
