@@ -255,7 +255,7 @@ input, select, textarea {
 }
 
 .header__logo img {
-  height: 44px;
+  height: 88px;
   width: auto;
   object-fit: contain;
 }
@@ -490,6 +490,117 @@ input, select, textarea {
   display: grid;
   grid-template-columns: 1fr;
   gap: 24px;
+}
+
+/* ── Photo Grid – Nossas Soluções ── */
+.solucoes__photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.sol-card {
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.sol-card__inner {
+  position: relative;
+  min-height: 380px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.sol-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.72) 65%);
+  z-index: 1;
+}
+
+.sol-card__badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--green);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.06em;
+  z-index: 2;
+  text-transform: uppercase;
+}
+
+.sol-card__content {
+  position: relative;
+  z-index: 2;
+  padding: 24px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sol-card__icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.18);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  margin-bottom: 4px;
+}
+
+.sol-card__icon svg {
+  width: 20px;
+  height: 20px;
+  color: #fff;
+  stroke: #fff;
+}
+
+.sol-card__title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.sol-card__desc {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.55;
+}
+
+.sol-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #5de07a;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: 6px;
+  transition: gap 0.2s;
+}
+
+.sol-card__cta:hover { gap: 12px; }
+
+.sol-card__cta svg {
+  width: 14px;
+  height: 14px;
+  stroke: #5de07a;
+}
+
+@media (max-width: 600px) {
+  .solucoes__photo-grid { grid-template-columns: 1fr; }
 }
 
 .card--solution {
